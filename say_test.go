@@ -21,3 +21,19 @@ func TestHello(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func ExampleBye() {
+	greeting := say.Bye("Jonny")
+	fmt.Println(greeting)
+}
+
+func TestBye(t *testing.T) {
+	n := "Jonny"
+	expected := "Bye Jonny"
+	actual := say.Bye(n)
+
+	if expected != actual {
+		t.Logf("Bye: expected [%s] got [%s]", expected, actual)
+		t.Fail()
+	}
+}
